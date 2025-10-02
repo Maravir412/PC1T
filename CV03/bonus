@@ -1,0 +1,33 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    const double speed = 340.0; // rychlost zvuku v m/s
+    double timeSec;
+
+    cout << "Zadej cas (v sekundach) od blesku do hromu: ";
+    if (!(cin >> timeSec)) {
+        cerr << "Chyba: nezadals platne cislo.\n";
+        return 1;
+    }
+
+    if (timeSec < 0) {
+        cerr << "Chyba: cas nemuze byt zaporny.\n";
+        return 1;
+    }
+
+    double distanceMeters = timeSec * speed;
+    double distanceKm = distanceMeters / 1000.0;
+
+    cout << fixed << setprecision(2);
+    cout << "Priblizna vzdalenost blesku: " << distanceMeters << " m";
+    if (distanceMeters >= 1000.0) {
+        cout << " (" << distanceKm << " km)";
+    }
+    cout << endl;
+
+    return 0;
+}
