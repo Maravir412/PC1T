@@ -1,0 +1,20 @@
+// bourka.cpp : Defines the entry point for the application.
+//
+
+#include "bourka.h"
+#include <stdio.h>
+using namespace std;
+int main() {
+    double cas;       // čas v sekundách
+    double rychlost = 340.0;  // rychlost zvuku v m/s
+    double vzdalenost;
+
+    printf("Zadejte cas (v sekundach), za ktery se ozve hrom po blesku: ");
+    scanf("%lf", &cas);
+
+    vzdalenost = cas * rychlost;
+
+    printf("Vzdalenost blesku je %.2f metru.\n", vzdalenost);
+
+    return 0;
+}
